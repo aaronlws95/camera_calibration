@@ -44,6 +44,7 @@ image_pts = np.asarray(image_pts)
 homographies, pred_intr_mat = zhang.get_intrinsics(world_pts, image_pts)
 pred_extr_mat = zhang.get_extrinsics(homographies, pred_intr_mat)
 
+
 # Reconstruction error
 rec_error = 0
 for i in range(len(world_pts)):

@@ -37,6 +37,8 @@ def get_intrinsics(world_data, image_data):
         homographies.append(H)
         V.append(vij(H, 0, 1))
         V.append(vij(H, 0, 0) - vij(H, 1, 1))
+    V = np.array(V)
+    homographies = np.array(homographies)
 
     _, _, Vt = np.linalg.svd(V)
     b = Vt[-1]
